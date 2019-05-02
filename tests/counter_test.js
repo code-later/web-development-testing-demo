@@ -33,20 +33,20 @@ test('Sort output descending', () => {
 test('Count words in String', () => {
   const input = 'No, no,no, I kill the bus driver!'
 
-  expect(countWords(input)).toEqual({
-    'no': 3,
-    'i': 1,
-    'kill': 1,
-    'the': 1,
-    'bus': 1,
-    'driver': 1
-  })
+  expect(countWords(input)).toEqual([
+    { 'word': 'no', 'count': 3 },
+    { 'word': 'i', 'count': 1 },
+    { 'word': 'kill', 'count': 1 },
+    { 'word': 'the', 'count': 1 },
+    { 'word': 'bus', 'count': 1 },
+    { 'word': 'driver', 'count': 1 }
+  ])
 })
 
 test('Ignore case while counting', () => {
   const input = 'No, no, no'
 
-  expect(countWords(input)).toEqual({
-    'no': 3
-  })
+  expect(countWords(input)).toEqual([
+    { 'word': 'no', 'count': 3 }
+  ])
 })
